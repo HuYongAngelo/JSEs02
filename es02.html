@@ -8,7 +8,7 @@
         
         <div id="div1"></div>
         
-        <button id = "btn1">CLICCAMI</button>
+        
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             //document.getElementById("div1").innerHTML = "ciao";
@@ -18,16 +18,21 @@
             //$("#btn1").click(function(){});                                                    //Click vuole la definizione della funzione
             
             var red = true;
-            $("#btn1").click(function(){
+            
+            $("body")
+            .append($("<button id = 'btn1'>CLICCAMI</button>")
+            .click(function() {
                 $("#div1").html("Ti avevo detto di non premere MONA!");
-                if (red) {
+                if (!red) {
                     $("#div1").attr("style", "background-color: rgb(255, 255, 255)");
-                    red = false;
+                    red = true;
                 } else {
                     $("#div1").attr("style", "background-color: rgb(255, 0, 255)");
-                    red = true;
+                    red = false;
                 }
-            });
+            }));
+
+            $("body").append($("<h3>Aggiunto un titolo H3</h3>"));
         </script>
     </body>
 </htmls>
